@@ -1,0 +1,131 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-color: moccasin;
+}
+
+
+.title {
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.container {
+
+    height: 100vh;
+    margin: 0 auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+
+.icons {
+    margin: 0 auto;
+    margin-top: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.icons img {
+    padding: 20px;
+    height: 200px;
+
+
+}
+
+.pencil {
+    transform: rotate(90deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(300px);
+    animation: pencil 2s ease 2s forwards;
+
+}
+
+
+
+.calc {
+    transform: translateY(300px);
+
+    animation: calc 2s ease 0s forwards;
+}
+
+.book {
+    transform: translateY(450px);
+
+
+    animation: book 2s ease 0.5s forwards;
+}
+
+.paper {
+    transform: translateY(450px);
+
+    animation: paper 2s ease 1s forwards;
+}
+
+.pallete {
+    transform: translateY(-500px);
+
+    animation: pallete 2s ease 1.5s forwards;
+}
+
+
+
+@keyframes pencil {
+    from {
+        transform: translateY(300px) rotate(0deg);
+    }
+
+    to {
+        transform: translateY(0px) rotate(90deg);
+
+    }
+}
+
+@keyframes calc {
+    from {
+        transform: translateY(300px);
+    }
+
+    to {
+        transform: translateY(30px) rotate(-15deg)
+    }
+}
+
+@keyframes book {
+    from {
+        transform: translateY(450px);
+    }
+
+    to {
+        transform: translateY(0px) rotate(-15deg)
+    }
+
+}
+
+@keyframes paper {
+    from {
+        transform: translateY(450px);
+    }
+
+    to {
+        transform: translateY(0px) rotate(15deg);
+    }
+
+}
+
+@keyframes pallete {
+    from {
+        transform: translateY(500px);
+    }
+
+    to {
+        transform: translateY(50px) rotate(15deg);
+    }
+}

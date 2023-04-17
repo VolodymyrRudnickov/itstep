@@ -1,0 +1,184 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 18px;
+    display: inline-block;
+}
+
+.container {
+    position: relative;
+}
+
+.title {
+    color: white;
+    float: left;
+    width: 15%;
+    padding: 1.5% 6.5%;
+    text-transform: uppercase;
+}
+
+
+.menu {
+    line-height: 67px;
+
+    float: right;
+    width: 85%;
+}
+
+.menu li:hover {
+    background-color: #8c3140;
+}
+
+.menu li {
+    display: inline-block;
+    color: white;
+    padding: 0px 30px;
+
+}
+
+.header {
+    background-color: #a23646;
+    height: 70px;
+    position: sticky;
+    z-index: 100;
+    top: 0;
+}
+
+.content {
+    max-width: 1200px;
+    min-width: 700px;
+    width: 100%;
+    padding-left: 67px;
+
+}
+
+.bio-left {
+
+    width: 48%;
+    float: left;
+    padding: 1%;
+}
+
+.bio-left p {
+    margin: 10px;
+    text-align: justify;
+    width: 700px;
+}
+
+.main-title {
+    position: relative;
+    padding-left: 10px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+
+}
+
+.main-title::after {
+    content: "";
+    position: absolute;
+    top: 64px;
+    left: 10px;
+    height: 2px;
+    background-color: gray;
+    width: 135%;
+}
+
+.subtitle {
+    padding-top: 10px;
+    padding-left: 10px;
+    font-weight: 100;
+}
+
+.right {
+    float: right;
+    padding: 1%;
+    width: 38%;
+
+
+}
+
+.card {
+    height: 575px;
+    margin-left: 67px;
+
+    padding: 15px 20px;
+    width: 300px;
+    background-color: rgba(188, 186, 186, 0.536)
+}
+
+.card span {
+    font-weight: 700;
+
+}
+
+.rigth-info {
+    width: 68%;
+    float: right;
+    padding: 1%;
+}
+
+.rigth-info p {
+    margin-top: 5px;
+}
+
+.left-info {
+    width: 28%;
+    float: left;
+    padding: 1%;
+}
+
+.left-info p {
+    margin-top: 5px;
+
+    font-weight: 700;
+}
+.left-info p:last-child{
+    margin-top: 52px;
+}
+
+.clearfix::before,
+.clearfix::after {
+    display: table;
+    content: '';
+
+
+}
+
+.clearfix::after {
+    clear: both;
+}
+
+.other {
+    border: 2px solid gray;
+    margin: 2%;
+    margin-bottom: 20px;
+}
+
+.authors {
+    width: 11.5%;
+    float: left;
+    margin: 2.5%;
+    text-align: center;
+
+}
+
+.authors img {
+    height: 150px;
+    width: 130px;
+    padding: 3%;
+
+}
+
+.title-main {
+    padding-left: 20px;
+}
