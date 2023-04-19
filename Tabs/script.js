@@ -1,9 +1,7 @@
 
 function switchColor() {
-    let btn = document.querySelectorAll('.button');
-    let tabs = document.querySelectorAll('.tab-content');
-    console.log(btn);
-
+    const btn = document.querySelectorAll('.button');
+    const tabs = document.querySelectorAll('.tab-content');
     btn.forEach(item => {
         item.addEventListener('click', (event) => {
             console.log(event.target);
@@ -28,12 +26,10 @@ function switchColor() {
 
 
 function switchTabs() {
-    let btn = document.querySelectorAll('.button');
-    let tabs = document.querySelectorAll('.tab-content');
-    console.log(tabs);
-
+    const btn = document.querySelectorAll('.button');
+    const tabs = document.querySelectorAll('.tab-content');
     let className = '';
-    for (let item of btn) {
+    btn.forEach(item => {
         item.addEventListener('click', function (event) {
             className = event.target.id; // добавляем в переменную id кнопки,по которой кликнули
             for (let block of tabs) {
@@ -43,14 +39,10 @@ function switchTabs() {
                 if (block.id != className) { // если нет - отбираем класс
                     block.classList.remove('active');
                 };
-            }
-
-        })
-
-    }
-}
+            };
+        });
+    });
+};
 
 switchTabs();
 switchColor();
-
-
