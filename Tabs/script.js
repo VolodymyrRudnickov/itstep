@@ -1,51 +1,54 @@
-
-function switchColor() {
-    const btn = document.querySelectorAll('.button');
-    const tabs = document.querySelectorAll('.tab-content');
-    btn.forEach(item => {
-        item.addEventListener('click', (event) => {
-            console.log(event.target);
-            for (let block of tabs) {
-                let activeBlock = ''; // переменная,куда складывается id блока с классом active
-                if (block.classList.contains('active')) {
-                    activeBlock = block.id; // присваиваем id нужного элемента
-                };
-                if (event.target.id == activeBlock) { // если класс  блока и  id совпадают нажатой кнопки  - добавляем класс
-                    event.target.classList.add('active-btn')
-                };
-                if (item.id !== activeBlock || item.nextElementSibling == null) {
-                    // если id не совпадают и у последнего элемента нету  sibling-элемента - отбираем класс
-                    item.classList.remove('active-btn');
-                };
-            };
-
-        })
-    });
-
-};
-
+let btn = document.querySelectorAll('.button');
+let tabs = document.querySelectorAll('.tab-content');
 
 
 function switchTabs() {
-    let btn = document.querySelectorAll('.button');
-    let tabs = document.querySelectorAll('.tab-content');
-    console.log(tabs);
     let blockData = '';
-    btn.forEach(item => {
+    for (let item of btn) {
         item.addEventListener('click', function (event) {
             for (let block of tabs) {
                 blockData = block.dataset.id;
                 // console.log(blockData);
                 if (blockData == event.target.id) {
                     block.classList.add('active');
+                    activeBlock = block.dataset.id;
                 }
                 if (blockData != event.target.id) {
                     block.classList.remove('active')
                 }
             };
         });
+    }
+
+};
+
+
+
+
+function switchColor() {
+    let parent = document.querySelector('.nav-block');
+    let menuBtn = parent.querySelectorAll('.button');
+    console.log(menuBtn);
+
+    parent.addEventListener('click', (event) => {
+        let target = event.target;
+        let activeBlock;
+        console.log(target);
+        for (let i = 0; i < menuBtn.length; i++) {
+            menuBtn[i].classList.remove('active-btn')
+        }
+        for (let i = 0; i < tabs.length; i++) {
+            if (tabs[i].classList.contains('active')) {
+                activeBlock = tabs[i].dataset.id;
+                console.log(activeBlock);
+            };
+            if (target.id == activeBlock) {
+                target.classList.add('active-btn');
+            };
+        };
     });
 };
 
+
 switchTabs();
-switchColor();
+switchColor()
