@@ -1,8 +1,7 @@
-let btn = document.querySelectorAll('.button');
-let tabs = document.querySelectorAll('.tab-content');
-
 
 function switchTabs() {
+    let btn = document.querySelectorAll('.button');
+    let tabs = document.querySelectorAll('.tab-content');
     let blockData = '';
     for (let item of btn) {
         item.addEventListener('click', function (event) {
@@ -23,11 +22,10 @@ function switchTabs() {
 };
 
 
-
-
 function switchColor() {
     let parent = document.querySelector('.nav-block');
     let menuBtn = parent.querySelectorAll('.button');
+    let tabs = document.querySelectorAll('.tab-content');
     console.log(menuBtn);
 
     parent.addEventListener('click', (event) => {
