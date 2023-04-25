@@ -25,20 +25,23 @@ function switchColor() {
 };
 
 
+
 function switchTabs() {
-    const btn = document.querySelectorAll('.button');
-    const tabs = document.querySelectorAll('.tab-content');
-    let className = '';
+    let btn = document.querySelectorAll('.button');
+    let tabs = document.querySelectorAll('.tab-content');
+    console.log(tabs);
+    let blockData = '';
     btn.forEach(item => {
         item.addEventListener('click', function (event) {
-            className = event.target.id; // добавляем в переменную id кнопки,по которой кликнули
             for (let block of tabs) {
-                if (block.id == className) { // проверяем id блока,если верно - добавляем класс
+                blockData = block.dataset.id;
+                // console.log(blockData);
+                if (blockData == event.target.id) {
                     block.classList.add('active');
                 }
-                if (block.id != className) { // если нет - отбираем класс
-                    block.classList.remove('active');
-                };
+                if (blockData != event.target.id) {
+                    block.classList.remove('active')
+                }
             };
         });
     });
