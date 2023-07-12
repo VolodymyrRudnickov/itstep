@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+}
+
+.btn {
+    border: none;
+    border-radius: 10px;
+    transition: all 0.5s ease 0s;
+    position: relative;
+    width: 100px;
+    height: 50px;
+}
+
+.parent {
+    position: relative;
+}
+
+.btn button {
+
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+button:hover {
+    background-color: wheat;
+}
+
+
+.tip {
+    color: white;
+    text-align: center;
+    padding: 10px;
+    width: 80px;
+    height: 20px;
+    font-size: 14px;
+    border-radius: 5px;
+    background-color: blueviolet;
+}
+
+.triangle-bottom {
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 10px solid blueviolet;
+    position: absolute;
+    bottom: -9px;
+    left: 40%;
+}
+
+.triangle-top {
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 10px solid blueviolet;
+    position: absolute;
+    top: -9px;
+    left: 40%;
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+.abs {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+}
