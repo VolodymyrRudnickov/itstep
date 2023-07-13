@@ -1,32 +1,39 @@
 const triangle = document.querySelector('.triangle');
 const text = document.querySelector('.text');
-let textWidth = parseInt(window.getComputedStyle(text).width);
-let textHeigth = parseInt(window.getComputedStyle(text).height);
-console.log(textWidth);
-console.log(textHeigth);
+
 let isPress = false;
 
-function changeWidth(w,h){
-        text.style.width = textWidth++ + 'px';
-        text.style.height = textHeigth++ +'px';
-    
-}
-triangle.addEventListener('mousedown', (e) => {
-    e.preventDefault();
-    isPress = true;
-    
-});
-triangle.addEventListener('mouseup',(e) => {
-    isPress = false;
-})
 
-triangle.addEventListener('mousemove', (e) => {
-    e.preventDefault()
-    //     text.style.width = (textWidth + (e.pageX - textWidth)) + 'px';
-    //    text.style.height = (textHeigth + (e.pageY - textHeigth)) + 'px';
-    if(isPress){
-        changeWidth(e.pageX, e.pageY);
+triangle.addEventListener('mousedown', (e) => { 
+    e.preventDefault();
+    isPress = true;// если кнопка нажата над треугольником 
+    changePos(e.pageX, e.pageY);
+    changeSize(e.pageX, e.pageY);
+});
+
+document.addEventListener('mousemove', (e) => {
+    if(isPress) {
+        changePos(e.pageX, e.pageY);
+        changeSize(e.pageX, e.pageY);
     }
-   
-    });
-    
+});
+
+document.addEventListener('mouseup', (e) => {
+    isPress = false; // когда отпустили кнопку
+});
+
+// меняем координаты треугольника на координаты мышки
+function changePos(x,y){
+    triangle.style.left  = (x - 30) + 'px';
+    triangle.style.top  = (y - 30) + 'px';
+
+};
+// находим координаты треугольника
+const trCoordX = Math.floor(triangle.getBoundingClientRect().x);
+const trCoordY = Math.floor(triangle.getBoundingClientRect().y);
+
+// меняем ширину и высоту блока в зависимости от координат мышки
+function changeSize(x, y){
+    text.style.width =  (x - 30) + 'px';
+    text.style.height =  (y - 30) + 'px';
+};
