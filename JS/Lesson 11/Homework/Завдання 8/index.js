@@ -28,9 +28,7 @@ function changePos(x,y){
     triangle.style.top  = (y - 30) + 'px';
 
 };
-// находим координаты треугольника
-const trCoordX = Math.floor(triangle.getBoundingClientRect().x);
-const trCoordY = Math.floor(triangle.getBoundingClientRect().y);
+
 
 // меняем ширину и высоту блока в зависимости от координат мышки
 function changeSize(x, y){
