@@ -4,7 +4,7 @@ const text = document.querySelector('.text');
 let isPress = false;
 
 
-triangle.addEventListener('mousedown', (e) => { 
+triangle.addEventListener('mousedown', (e) => {
     e.preventDefault();
     isPress = true;// если кнопка нажата над треугольником 
     changePos(e.pageX, e.pageY);
@@ -12,7 +12,7 @@ triangle.addEventListener('mousedown', (e) => {
 });
 
 document.addEventListener('mousemove', (e) => {
-    if(isPress) {
+    if (isPress) { // если кнопка нажата 
         changePos(e.pageX, e.pageY);
         changeSize(e.pageX, e.pageY);
     }
@@ -23,15 +23,15 @@ document.addEventListener('mouseup', (e) => {
 });
 
 // меняем координаты треугольника на координаты мышки
-function changePos(x,y){
-    triangle.style.left  = (x - 30) + 'px';
-    triangle.style.top  = (y - 30) + 'px';
+function changePos(x, y) {
+    triangle.style.left = (x - 30) + 'px';
+    triangle.style.top = (y - 30) + 'px';
 
 };
 
 
 // меняем ширину и высоту блока в зависимости от координат мышки
-function changeSize(x, y){
-    text.style.width =  (x - 30) + 'px';
-    text.style.height =  (y - 30) + 'px';
+function changeSize(x, y) {
+    text.style.width = (x - 30) + 'px';
+    text.style.height = (y - 30) + 'px';
 };
