@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Завдання 1</title>
+    <style>
+      button {
+        border: none;
+      }
+      body {
+        overflow: hidden;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .out {
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+        height: 100px;
+        position: relative;
+        background-color: gray;
+      }
+      .incr {
+        border-bottom-left-radius: 5px;
+        transition: all 0.8s ease 0s;
+        background-color: rgba(128, 128, 128, 0.568);
+        height: 50px;
+        width: 50px;
+        rotate: 180deg;
+        position: absolute;
+        right: -50px;
+        top: 0;
+      }
+      .decr {
+        border-bottom-right-radius: 5px;
+        transition: all 0.8s ease 0s;
+        background-color: rgba(128, 128, 128, 0.568);
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        right: -50px;
+        bottom: 0;
+      }
+      .num {
+        color: white;
+        font-size: 40px;
+        font-weight: 700;
+      }
+      .incr:active,
+      .decr:active {
+        scale: 0.85;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="out">
+        <div class="num"></div>
+        <button class="incr"><img src="arrow.svg" alt="" /></button>
+        <button class="decr"><img src="arrow.svg" alt="" /></button>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
